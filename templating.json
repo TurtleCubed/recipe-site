@@ -1,0 +1,6 @@
+{
+    "recipe1": "<head>\n<link rel=\"stylesheet\" href=\"../styles.css\">\n</head>\n<body>\n<div class=\"topnav\">\n<a href=\"/index.html\">Home</a>\n<a href=\"/categories.html\">Categories</a>\n</div>\n<div class=\"content\">",
+    "recipe2" : "<script>\nfunction scale() {\n  scale_element = document.getElementById(\"scale\")\nconst scale = scale_element.value / scale_element.getAttribute(\"data-original\");\nqs = document.getElementsByClassName(\"quantity\");\nfor (var i = 0; i < qs.length; i++) {\nqs[i].innerText = (Number(qs[i].getAttribute(\"data-original\")) * scale).toFixed(1);\n};\n}\n</script>\n</div>\n</body>",
+    "topnav": "<div class=\"topnav\">\n<a href=\"/index.html\">Home</a>\n<a href=\"/categories.html\">Categories</a>\n</div>"
+
+}

@@ -1,0 +1,140 @@
+<head>
+ <link href="../styles.css" rel="stylesheet"/>
+</head>
+<body>
+ <div class="topnav">
+  <a href="/index.html">
+   Home
+  </a>
+  <a href="/categories.html">
+   Categories
+  </a>
+ </div>
+ <div class="content">
+  <h1>
+   Pork Stew
+  </h1>
+  <a href="asian.html">
+   Asian
+  </a>
+  <a href="malaysian.html">
+   Malaysian
+  </a>
+  <a href="entree.html">
+   Entree
+  </a>
+  <br/>
+  <img src="..//static/images/stew.jpg" width="60%"/>
+  <br/>
+  <br/>
+  Makes
+  <input data-original="8" id="scale" oninput="scale()" style="width: 45px;" type="number" value="8"/>
+  servings
+  <br/>
+  <h2>
+   Ingredients
+  </h2>
+  <ul>
+   <li>
+    <span class="quantity" data-original="500">
+     500
+    </span>
+    g pork belly or butt
+   </li>
+   <li>
+    <span class="quantity" data-original="1000">
+     1000
+    </span>
+    ml water
+   </li>
+   <li>
+    <span class="quantity" data-original="1">
+     1
+    </span>
+    head of garlic
+   </li>
+   <li>
+    <span class="quantity" data-original="15">
+     15
+    </span>
+    ml white peppercorn
+   </li>
+   <li>
+    <span class="quantity" data-original="5">
+     5
+    </span>
+    hard boiled eggs
+   </li>
+   <li>
+    <span class="quantity" data-original="200">
+     200
+    </span>
+    g bean curd
+   </li>
+   <li>
+    <span class="quantity" data-original="60">
+     60
+    </span>
+    ml soy sauce
+   </li>
+   <li>
+    <span class="quantity" data-original="45">
+     45
+    </span>
+    ml sweet soy sauce
+   </li>
+   <li>
+    <span class="quantity" data-original="20">
+     20
+    </span>
+    ml dark soy sauce
+   </li>
+   <li>
+    salt to taste
+   </li>
+  </ul>
+  <h2>
+   Equipment
+  </h2>
+  <ul>
+   <li>
+    Pot
+   </li>
+  </ul>
+  <h2>
+   Directions
+  </h2>
+  <ol>
+   <li>
+    Mince the garlic
+   </li>
+   <li>
+    Cut up the pork into 2 cm cubes
+   </li>
+   <li>
+    Boil the water
+   </li>
+  </ol>
+  <img src="..//static/images/test.jpg" width="60%"/>
+  <br/>
+  <br/>
+  <ol>
+   <li>
+    Add the garlic, pork, bean curd, and hard boiled eggs. Boil for 30 minutes.
+   </li>
+   <li>
+    Add the soy sauce, pepper, and any needed salt. Boil for 20 additional minutes.
+   </li>
+  </ol>
+  <script>
+   function scale() {
+  scale_element = document.getElementById("scale")
+const scale = scale_element.value / scale_element.getAttribute("data-original");
+qs = document.getElementsByClassName("quantity");
+for (var i = 0; i < qs.length; i++) {
+qs[i].innerText = (Number(qs[i].getAttribute("data-original")) * scale).toFixed(1);
+};
+}
+  </script>
+ </div>
+</body>

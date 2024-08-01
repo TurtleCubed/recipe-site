@@ -1,0 +1,11 @@
+one script
+    convert all markdown recipes in /md_recipies to html recipes in /recipes
+    get a list of tags from the markdown recipes
+        first tag is cuisine second tag is meal/dessert
+    updates index with a list of all recipes
+    creates an html file for each category
+        each category has a list of each recipe
+index with random featured recipe
+index with search bar
+
+images should not interupt ordered lists.
