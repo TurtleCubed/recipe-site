@@ -15,19 +15,26 @@ def create_categories_page(df: pl.DataFrame, df_recipes: pl.DataFrame):
         # create_category_page()
         # create a page for each category
         for name1, data1 in data.group_by('value', maintain_order=True):
-            html_string += f'<a href="/recipe_site/{name1[0]}.html">{name1[0]}</a> <br>\n'
-            for row in data1.iter_rows():
-                print(row)
-                recipe_file = df_recipes.filter(pl.col('name') == row[2]).row(0)
-            # html_string += f'<a href="/recipe_site/{recipe_file}">{name1[0]}</a> <br>\n'
-
-    html_string += "\n<body>"
+            html_string += f'<a href="/recipe_site/categories/{name1[0].lower()}.html">{name1[0]}</a> <br>\n'
+            create_category_page(data1, df_recipes)
+            
+    html_string += "\n</body>"
     with open(Path('categories.html'), 'w') as f:
         f.write(BeautifulSoup(html_string, 'html.parser').prettify())
 
-def create_category_page(df: pl.DataFrame):
+def create_category_page(df: pl.DataFrame, df_recipes: pl.DataFrame):
+    with open(Path('templating.json')) as f:
+        templating = json.load(f)
+    html_string = templating['head'] + "\n<body>\n" + templating['topnav'] + "\n"
+
+    for row in df.iter_rows():
+        recipe_file = df_recipes.filter(pl.col('name') == row[2]).row(0)[2]
+        html_string += f'<a href="/recipe_site/{recipe_file}">{row[2]}</a> <br>\n'
+
+    html_string += "\n</body>"
+    with open(Path('categories', row[1].lower() + '.html'), 'w') as f:
+        f.write(BeautifulSoup(html_string, 'html.parser').prettify())
     # add thumbnail + name + categories for each recipe
-    pass
 
 def create_index_page():
     # create index page with search box
