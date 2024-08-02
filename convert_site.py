@@ -15,7 +15,7 @@ def create_categories_page(df: pl.DataFrame, df_recipes: pl.DataFrame):
         # create_category_page()
         # create a page for each category
         for name1, data1 in data.group_by('value', maintain_order=True):
-            html_string += f'<a href="/recipe_site/categories/{name1[0].lower()}.html">{name1[0]}</a> <br>\n'
+            html_string += f'<a href="/recipe-site/categories/{name1[0].lower()}.html">{name1[0]}</a> <br>\n'
             create_category_page(data1, df_recipes)
             
     html_string += "\n</body>"
@@ -29,7 +29,7 @@ def create_category_page(df: pl.DataFrame, df_recipes: pl.DataFrame):
 
     for row in df.iter_rows():
         recipe_file = df_recipes.filter(pl.col('name') == row[2]).row(0)[2]
-        html_string += f'<a href="/recipe_site/{recipe_file}">{row[2]}</a> <br>\n'
+        html_string += f'<a href="/recipe-site/{recipe_file}">{row[2]}</a> <br>\n'
 
     html_string += "\n</body>"
     with open(Path('categories', row[1].lower() + '.html'), 'w') as f:
