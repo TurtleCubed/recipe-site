@@ -1,9 +1,29 @@
+from bs4 import BeautifulSoup
 from convert import convert_file
+import json
 from pathlib import Path
 import polars as pl
 
-def create_categories_page(df: pl.DataFrame):
-    pass
+
+def create_categories_page(df: pl.DataFrame, df_recipes: pl.DataFrame):
+    with open(Path('templating.json')) as f:
+        templating = json.load(f)
+    html_string = templating['head'] + "\n<body>\n" + templating['topnav'] + "\n"
+    
+    for name, data in df.group_by('type', maintain_order=True):
+        html_string += f'{name[0]} <br>\n'
+        # create_category_page()
+        # create a page for each category
+        for name1, data1 in data.group_by('value', maintain_order=True):
+            html_string += f'<a href="/recipe_site/{name1[0]}.html">{name1[0]}</a> <br>\n'
+            for row in data1.iter_rows():
+                print(row)
+                recipe_file = df_recipes.filter(pl.col('name') == row[2]).row(0)
+            # html_string += f'<a href="/recipe_site/{recipe_file}">{name1[0]}</a> <br>\n'
+
+    html_string += "\n<body>"
+    with open(Path('categories.html'), 'w') as f:
+        f.write(BeautifulSoup(html_string, 'html.parser').prettify())
 
 def create_category_page(df: pl.DataFrame):
     # add thumbnail + name + categories for each recipe
@@ -22,23 +42,15 @@ def main():
     tags = pl.DataFrame()
 
     for md_recipe in md_recipes:
-        # tags are created as %%tag Course%%Appetizer Cuisine%%American Cuisine%%French
         metadata = convert_file(md_recipe)
-        recipes = pl.concat([recipes, pl.DataFrame({'name': metadata['name'], 'image': metadata['image']})])
+        recipes = pl.concat([recipes, pl.DataFrame({'name': metadata['name'], 'image': metadata['image'], 'file': metadata['file']})])
         tags = pl.concat([tags, pl.DataFrame(metadata['tags'])])
     # print(recipes.head())
     # print(tags.head())
 
     # create a page for all categories
-    # create_categories_page()
-    for name, data in tags.group_by('type'):
-        print(name)
-        print(data.head())
-        # create_category_page()
-        # create a page for each category
-        for name1, data1 in data.group_by('value'):
-            print(name1)
-            print(data1.head())
+    create_categories_page(tags.sort(['type', 'value']), recipes)
+    
                 
 
 if __name__ == '__main__':
