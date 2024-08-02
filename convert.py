@@ -27,13 +27,13 @@ def convert_line(previous:str, current: str):
                     'value': tag_value,
                 }
             )
-            html_line += f'<a href="{tag_value.lower()}.html">{tag_value}</a>\n'
+            html_line += f'<a href="/recipe-site/categories/{tag_value.lower()}.html">{tag_value}</a>\n'
         html_line += "<br>"
     
     # images
     if re.match(r'^!.*\[.*\].*\((.*)\)', current):
         path = re.match(r'^!.*\[.*\].*\((.*)\)', current).group(1)
-        html_line = f'<img src="../{path}" width="60%">\n<br>\n<br>'
+        html_line = f'<img src="/recipe-site/{path}" width="60%">\n<br>\n<br>'
         extra = path
     
     # quantity
