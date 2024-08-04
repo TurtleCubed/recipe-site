@@ -1,0 +1,211 @@
+<head>
+ <link href="/recipe-site/styles.css" rel="stylesheet"/>
+</head>
+<body>
+ <div class="topnav">
+  <a href="/recipe-site/index.html">
+   Home
+  </a>
+  <a href="/recipe-site/categories.html">
+   Categories
+  </a>
+ </div>
+ <div class="content">
+  <h1>
+   Lemon Chiffon Cake
+  </h1>
+  <a href="/recipe-site/categories/american.html">
+   American
+  </a>
+  <a href="/recipe-site/categories/dessert.html">
+   Dessert
+  </a>
+  <br/>
+  <img src="/recipe-site//static/images/no_image.jpg" width="60%"/>
+  <br/>
+  <br/>
+  Makes
+  <input data-original="1" id="scale" oninput="scale()" style="width: 45px;" type="number" value="1"/>
+  cake
+  <br/>
+  <h2>
+   Ingredients
+  </h2>
+  <h3>
+   Body
+  </h3>
+  <ul>
+   <li>
+    <span class="quantity" data-original="80">
+     80
+    </span>
+    g butter
+   </li>
+   <li>
+    <span class="quantity" data-original="150">
+     150
+    </span>
+    g white sugar
+   </li>
+   <li>
+    <span class="quantity" data-original="100">
+     100
+    </span>
+    g packed brown sugar
+   </li>
+   <li>
+    <span class="quantity" data-original="5">
+     5
+    </span>
+    eggs
+   </li>
+  </ul>
+  <h3>
+   Filling
+  </h3>
+  <ul>
+   <li>
+    <span class="quantity" data-original="250">
+     250
+    </span>
+    mL heavy whipping cream
+   </li>
+   <li>
+    <span class="quantity" data-original="10">
+     10
+    </span>
+    g sugar
+   </li>
+   <li>
+    <span class="quantity" data-original="250">
+     250
+    </span>
+    mL jam of some kind
+   </li>
+   <li>
+    Cake decorations
+   </li>
+  </ul>
+  <h2>
+   Equipment
+  </h2>
+  <ul>
+   <li>
+    Scale
+   </li>
+   <li>
+    Hand mixer
+   </li>
+   <li>
+    2 large mixing bowls
+   </li>
+   <li>
+    Paddle
+   </li>
+   <li>
+    Two 8 inch cake pans
+   </li>
+   <li>
+    Parchment paper
+   </li>
+   <li>
+    Refrigerator
+   </li>
+  </ul>
+  <h2>
+   Directions
+  </h2>
+  <h3>
+   Body
+  </h3>
+  <ol>
+   <li>
+    Preheat the oven to 350 &deg;F.
+   </li>
+   <li>
+    Separate the egg whites from the egg yolks.
+   </li>
+   <li>
+    Whip egg yolks and
+    <span class="quantity" data-original="20">
+     20
+    </span>
+    g of sugar together with the hand mixer.
+   </li>
+   <li>
+    Whip the egg whites until it starts folding.
+   </li>
+   <li>
+    Add a third of the remaining body sugar into the whites. Whip the mixture until the sugar is fully combined.
+   </li>
+   <li>
+    Repeat the previous step until the all the sugar is exhausted.
+   </li>
+   <li>
+    Whip the egg white mixture until stiff peaks.
+   </li>
+   <li>
+    Melt the butter in a bowl in the microwave.
+   </li>
+   <li>
+    Use the paddle to fold the egg yolk mixture into the egg white mixture.
+   </li>
+   <li>
+    Sift the flour into the mixture and fold to integrate.
+   </li>
+   <li>
+    Fold in the butter. The mixture should be uniform.
+   </li>
+   <li>
+    Pour the batter evenly into the two cake pans.
+   </li>
+   <li>
+    Bake at 350 &deg;F for about 30 minutes.
+   </li>
+   <li>
+    Take the cakes out of the pans and refrigerate for 30 minutes.
+   </li>
+   <li>
+    Use a cake leveler to make the two tiers equal in thickness.
+   </li>
+  </ol>
+  <h3>
+   Filling
+  </h3>
+  <ol>
+   <li>
+    Combine the cream and filling sugar in a large bowl.
+   </li>
+   <li>
+    Whip the cream with the hand mixer until the cream is firm.
+   </li>
+  </ol>
+  <h3>
+   Combining
+  </h3>
+  <ol>
+   <li>
+    Use a cake spatula or paddle to cover the top of one of the tiers with a layer of cream and jam.
+   </li>
+   <li>
+    Align the second tier on the first.
+   </li>
+   <li>
+    Cover the entire thing in cream.
+   </li>
+   <li>
+    Decorate with whatever.
+   </li>
+  </ol>
+  <script>
+   function scale() {
+  scale_element = document.getElementById("scale")
+const scale = scale_element.value / scale_element.getAttribute("data-original");
+qs = document.getElementsByClassName("quantity");
+for (var i = 0; i < qs.length; i++) {
+qs[i].innerText = (Number(qs[i].getAttribute("data-original")) * scale).toFixed(1);
+};
+}
+  </script>
+ </div>
+</body>

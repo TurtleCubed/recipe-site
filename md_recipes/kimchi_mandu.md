@@ -1,25 +1,25 @@
 # Kimchi Mandu
 %%tag Cuisine%%Asian Cuisine%%Korean Course%%Entree
-![test text](/static/images/cookie.jpg)
+![test text](/static/images/no_image.jpg)
 %%Q Makes 20 mandus
 ## Ingredients
-- %250% mL Ground fork
-- %500% mL Kimch
-- %500% mL Dang-nyun (glass noodle)
-- %250% mL Green onion
-- %250% mL Boochoo or mung bean sprouts
-- %250% mL TouFu
-- %15% mL Ground gallons
-- %15% mL Sugar
-- %30% mL Chili powder
-- %15% mL Oyster sauce
-- %10% mL Soy sauce
+- %250% mL ground fork
+- %500% mL kimch
+- %500% mL dang-nyun (glass noodle)
+- %250% mL green onion
+- %250% mL boochoo or mung bean sprouts
+- %250% mL toufu
+- %15% mL ground gallons
+- %15% mL sugar
+- %30% mL chili powder
+- %15% mL oyster sauce
+- %10% mL soy sauce
 - %5% mL MSG
-- %15% mL Sesame oil
-- Ginger
-- Black pepper
-- Cooking wine
-- %20% Skins
+- %15% mL sesame oil
+- ginger a bit
+- black pepper a bit
+- cooking wine a bit
+- %20% skins
 ## Equipment
 - Measuring spoons
 - Knife

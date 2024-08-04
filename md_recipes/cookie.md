@@ -1,6 +1,6 @@
 # Chocolate Chip Cookies
 %%tag Cuisine%%American Course%%Dessert
-![test text](/static/images/cookie.jpg)
+![No Image](/static/images/no_image.jpg)
 %%Q Makes 12 cookies
 ## Ingredients
 - %1% stick of butter, softened

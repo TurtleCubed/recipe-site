@@ -47,7 +47,7 @@ def convert_line(previous:str, current: str):
     
     # continuing olist
     if re.match(r'^[0-9]*\.\ ', current):
-        html_line = f'  <li>{current[2:]}</li>'
+        html_line = f'  <li>{current[current.index(" ") + 1:]}</li>'
 
     
     # start of ulist
@@ -103,6 +103,8 @@ def convert_file(file_name):
     html_string = replace_quantities(html_string)
     
     metadata['file'] = 'recipes/' + Path(file_name).stem + '.html'
+    if not metadata.get('image'):
+        metadata['image'] = '/static/images/no_image.jpg'
 
     html_string = BeautifulSoup(html_string, 'html.parser').prettify(formatter='html')
     with open(metadata['file'], 'w', encoding='utf-8') as f:

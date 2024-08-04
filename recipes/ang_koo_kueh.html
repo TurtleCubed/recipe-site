@@ -1,0 +1,191 @@
+<head>
+ <link href="/recipe-site/styles.css" rel="stylesheet"/>
+</head>
+<body>
+ <div class="topnav">
+  <a href="/recipe-site/index.html">
+   Home
+  </a>
+  <a href="/recipe-site/categories.html">
+   Categories
+  </a>
+ </div>
+ <div class="content">
+  <h1>
+   Ang Koo Kueh
+  </h1>
+  <a href="/recipe-site/categories/asian.html">
+   Asian
+  </a>
+  <a href="/recipe-site/categories/chinese.html">
+   Chinese
+  </a>
+  <a href="/recipe-site/categories/dessert.html">
+   Dessert
+  </a>
+  <br/>
+  <img src="/recipe-site//static/images/no_image.jpg" width="60%"/>
+  <br/>
+  <br/>
+  Makes
+  <input data-original="12" id="scale" oninput="scale()" style="width: 45px;" type="number" value="12"/>
+  Ang Koo Kueh
+  <br/>
+  <h2>
+   Ingredients
+  </h2>
+  <h3>
+   Peanut Filling
+  </h3>
+  <ul>
+   <li>
+    <span class="quantity" data-original="200">
+     200
+    </span>
+    g peanut
+   </li>
+   <li>
+    <span class="quantity" data-original="40">
+     40
+    </span>
+    g white sugar
+   </li>
+   <li>
+    <span class="quantity" data-original="20">
+     20
+    </span>
+    mL water
+   </li>
+  </ul>
+  <h3>
+   Rice Cake
+  </h3>
+  <ul>
+   <li>
+    <span class="quantity" data-original="600">
+     600
+    </span>
+    g sweet or glutinous rice flour
+   </li>
+   <li>
+    <span class="quantity" data-original="600">
+     600
+    </span>
+    g sweet potato
+   </li>
+   <li>
+    <span class="quantity" data-original="300">
+     300
+    </span>
+    g coconut milk
+   </li>
+   <li>
+    Vegetable oil
+   </li>
+  </ul>
+  <h2>
+   Equipment
+  </h2>
+  <ul>
+   <li>
+    Scale
+   </li>
+   <li>
+    Blender
+   </li>
+   <li>
+    Large pot
+   </li>
+   <li>
+    Ang Koo Kueh mold
+   </li>
+   <li>
+    Banana leaf or parchment paper
+   </li>
+  </ul>
+  <h2>
+   Directions
+  </h2>
+  <h3>
+   Peanut Filling
+  </h3>
+  <ol>
+   <li>
+    Grind peanuts until fine.
+   </li>
+   <li>
+    Add the sugar and water.
+   </li>
+   <li>
+    Roll into 20 g balls.
+   </li>
+  </ol>
+  <h3>
+   Rice Cake
+  </h3>
+  <ol>
+   <li>
+    Skin the potato.
+   </li>
+   <li>
+    Steam or boil the potato until soft.
+   </li>
+   <li>
+    Mash the potato until smooth.
+   </li>
+   <li>
+    Add the rice flour and coconut milk slowly, mixing as it is added. The texture is moldable and slightly sticky.
+   </li>
+   <li>
+    Roll the dough into 30 g balls.
+   </li>
+  </ol>
+  <h3>
+   Combining
+  </h3>
+  <ol>
+   <li>
+    Oil the mold with vegetable oil. This is to prevent the dough from sticking to the mold
+   </li>
+   <li>
+    Flatten a piece of dough until it is a circle about 0.5 cm thick.
+   </li>
+   <li>
+    Place a peanut ball into the center of the flattened dough.
+   </li>
+   <li>
+    Use the dough to fully surround the peanut.
+   </li>
+   <li>
+    Press the ball into the mold and flatten it until it is flush with the mold.
+   </li>
+   <li>
+    Hit the mold to release the Ang Koo Kueh.
+   </li>
+   <li>
+    Place the Ang Koo Kueh on a piece of oiled banana leaf or parchment paper.
+   </li>
+   <li>
+    Repeat for the rest of the dough and peanut.
+   </li>
+  </ol>
+  <h3>
+   Cooking
+  </h3>
+  <ol>
+   <li>
+    Steam for 10 - 12 minutes
+   </li>
+  </ol>
+  <script>
+   function scale() {
+  scale_element = document.getElementById("scale")
+const scale = scale_element.value / scale_element.getAttribute("data-original");
+qs = document.getElementsByClassName("quantity");
+for (var i = 0; i < qs.length; i++) {
+qs[i].innerText = (Number(qs[i].getAttribute("data-original")) * scale).toFixed(1);
+};
+}
+  </script>
+ </div>
+</body>

@@ -1,6 +1,6 @@
 # Pork Stew
 %%tag Cuisine%%Asian Cuisine%%Malaysian Course%%Entree
-![Stew in a big pot](/static/images/stew.jpg)
+![Stew in a big pot](/static/images/no_image.jpg)
 %%Q Makes 8 servings
 ## Ingredients
 - %500% g pork belly or butt
