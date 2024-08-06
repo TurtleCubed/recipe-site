@@ -11,9 +11,9 @@ def create_categories_page(df: pl.DataFrame, df_recipes: pl.DataFrame):
     html_string = templating['head'] + '\n<body>\n' + templating['topnav'] + '\n' + '<div class="content">'
     
     for name, data in df.group_by('type', maintain_order=True):
-        html_string += f'<h1>{name[0]}</h1><br>\n'
+        html_string += f'<h1>{name[0]}</h1>\n'
         for name1, data1 in data.group_by('value', maintain_order=True):
-            html_string += f'<a href="/recipe-site/categories/{name1[0].lower()}.html">{name1[0]}</a> <br>\n'
+            html_string += f'<a class="category-list" href="/recipe-site/categories/{name1[0].lower()}.html">{name1[0]}</a> <br>\n'
             create_category_page(data1, df_recipes)
             
     html_string += '\n</div>\n</body>'

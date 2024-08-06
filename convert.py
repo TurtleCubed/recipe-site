@@ -27,7 +27,7 @@ def convert_line(previous:str, current: str):
                     'value': tag_value,
                 }
             )
-            html_line += f'<a href="/recipe-site/categories/{tag_value.lower()}.html">{tag_value}</a>\n'
+            html_line += f'<a class="category" href="/recipe-site/categories/{tag_value.lower()}.html">{tag_value}</a>\n'
         html_line += "<br>"
     
     # images

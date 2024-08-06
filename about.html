@@ -1,0 +1,47 @@
+<head>
+    <link href="/recipe-site/styles.css" rel="stylesheet"/>
+   </head>
+   <body>
+    <div class="topnav">
+     <a href="/recipe-site/index.html">
+      Home
+     </a>
+     <a href="/recipe-site/categories.html">
+      Categories
+     </a>
+     <a href="/recipe-site/about.html">
+      About
+     </a>
+    </div>
+    <div class="content">
+     <h1>
+      About
+     </h1>
+     <div class="about">
+       Hi, I'm Tristan! <br>
+       I created this site because Github Pages is FREEEEEEEE. <br>
+       There are a lot of recipes without images here and I know. I'm working on it. All of the pictures are
+       my own so I have to go through and cook everythng before I can upload an image.
+     </div>
+    </div>
+    <script>
+     function myFunction() {
+   // Declare variables
+   var input, filter, ul, li, a, i, txtValue;
+   input = document.getElementById('myInput');
+   filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+   li = ul.getElementsByTagName('li');
+   for (i = 0; i < li.length; i++) {
+   a = li[i].getElementsByTagName("a")[0];
+   txtValue = a.textContent || a.innerText;
+   if (txtValue.toUpperCase().indexOf(filter) > -1) {
+   li[i].style.display = "";
+   } else {
+   li[i].style.display = "none";
+   }
+   }
+   }
+    </script>
+   </body>
+   
